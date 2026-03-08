@@ -2,6 +2,21 @@
 
 Este guia explica como levar o código do seu computador para a sua VPS e colocar o sistema no ar.
 
+## Passo 0: Limpeza Total (Fresh Start) 🧹
+
+Se você já tentou fazer o deploy e quer começar do zero para garantir que não haja "lixo" de versões anteriores:
+
+```bash
+# 1. Parar a stack atual
+docker stack rm ponto
+
+# 2. Remover TODAS as imagens antigas para forçar um build limpo
+docker image prune -a -f
+
+# 3. Remover a pasta do projeto (CUIDADO: Isso apaga os .env locais!)
+rm -rf /root/projetos/ponto
+```
+
 ## Passo 1: Preparar a Pasta na VPS
 
 Acesse sua VPS via SSH e crie a pasta onde o projeto vai ficar:
