@@ -26,6 +26,9 @@ WORKDIR /var/www
 # Copiar arquivos existentes do diretório do aplicativo
 COPY . /var/www
 
+# Instalar dependências do Composer
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
 # Ajustar permissões e entrypoint
 RUN chmod +x /var/www/docker-entrypoint.sh
 RUN mkdir -p /var/www/bootstrap/cache
