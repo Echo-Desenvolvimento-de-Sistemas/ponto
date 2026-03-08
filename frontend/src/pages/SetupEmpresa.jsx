@@ -95,7 +95,7 @@ const SetupEmpresa = () => {
         }
     };
 
-    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'http://localhost:8000';
+    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : window.location.origin;
 
     if (status === 'loading') {
         return (

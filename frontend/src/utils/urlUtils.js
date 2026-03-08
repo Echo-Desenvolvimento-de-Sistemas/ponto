@@ -13,13 +13,16 @@ export const fixBackendUrl = (url) => {
 
     // Se for um caminho relativo (/storage/...), prefixa com a URL do backend
     if (url.startsWith('/')) {
-        const backendBase = isLocal ? 'http://localhost:8000' : window.location.origin;
-        return `${backendBase}${url}`;
+        const baseUrl = import.meta.env.VITE_API_URL
+            ? import.meta.env.VITE_API_URL.replace('/api', '')
+            : window.location.origin;
+        return `${baseUrl}${url}`;
     }
 
     // Se a URL contém um ngrok antigo e estamos localmente, troca por localhost
     if (isLocal && url.includes('ngrok-free.app')) {
-        return url.replace(/https:\/\/[^/]+/g, 'http://localhost:8000');
+        const baseUrl = window.location.origin; // Define baseUrl here for this scope
+        return url.replace(/https:\/\/[^/]+/g, baseUrl);
     }
 
     return url;

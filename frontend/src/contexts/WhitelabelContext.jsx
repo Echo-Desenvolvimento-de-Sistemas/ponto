@@ -8,7 +8,7 @@ const WhitelabelContext = createContext({
     primaryColor: '#d19bf7',
     logoUrl: null,
     loginBgUrl: null,
-    baseUrl: 'http://localhost:8000',
+    baseUrl: window.location.origin,
     loading: true,
     refresh: () => { },
 });
@@ -25,7 +25,7 @@ export const WhitelabelProvider = ({ children }) => {
 
     const baseUrl = import.meta.env.VITE_API_URL
         ? import.meta.env.VITE_API_URL.replace('/api', '')
-        : 'http://localhost:8000';
+        : window.location.origin;
 
     const fetchConfig = async () => {
         try {
