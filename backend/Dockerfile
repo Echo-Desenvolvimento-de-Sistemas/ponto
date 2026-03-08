@@ -28,7 +28,8 @@ COPY . /var/www
 
 # Ajustar permissões e entrypoint
 RUN chmod +x /var/www/docker-entrypoint.sh
-RUN chown -R www-data:www-data /var/www/storage /var/www/cache
+RUN mkdir -p /var/www/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 EXPOSE 9000
 ENTRYPOINT ["/var/www/docker-entrypoint.sh"]
