@@ -1,0 +1,137 @@
+.pwa-prompt-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    padding: 1.25rem;
+    pointer-events: none;
+}
+
+.pwa-prompt-card {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    position: relative;
+    pointer-events: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pwa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.pwa-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.pwa-content {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.pwa-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(var(--primary-rgb), 0.3);
+}
+
+.pwa-badge-mini {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: white;
+    color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pwa-text h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.pwa-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.pwa-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.ios-instruction {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(var(--primary-rgb), 0.05);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    border: 1px dashed var(--primary-light);
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 480px) {
+    .pwa-prompt-container {
+        padding: 0.75rem;
+    }
+
+    .pwa-prompt-card {
+        border-radius: 20px 20px 0 0;
+        max-width: 100%;
+        margin: 0;
+        bottom: -0.75rem;
+    }
+
+    .pwa-content {
+        gap: 1rem;
+    }
+}

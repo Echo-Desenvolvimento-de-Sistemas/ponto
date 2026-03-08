@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # BACKEND - API Laravel
+  ponto-api:
+    image: ponto-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - DB_CONNECTION=mysql
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=ponto
+      - DB_USERNAME=root
+      - DB_PASSWORD=Akio2604*
+    networks:
+      - echonet
+    deploy:
+      mode: replicated
+      replicas: 1
+
+  # FRONTEND - React + Nginx
+  ponto-app:
+    image: ponto-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - echonet
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ponto-app.rule=Host(`ponto.echo.dev.br`)"
+        - "traefik.http.routers.ponto-app.entrypoints=websecure"
+        - "traefik.http.routers.ponto-app.tls.certresolver=myresolver"
+        - "traefik.http.services.ponto-app.loadbalancer.server.port=80"
+
+  # NGINX Proxy para o Backend (Opcional se usar Traefik direto no FPM, mas melhor com Nginx)
+  ponto-nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - ./backend:/var/www
+      - ./backend/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - echonet
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ponto-api.rule=Host(`api.ponto.echo.dev.br`)"
+        - "traefik.http.routers.ponto-api.entrypoints=websecure"
+        - "traefik.http.routers.ponto-api.tls.certresolver=myresolver"
+        - "traefik.http.services.ponto-api.loadbalancer.server.port=80"
+
+networks:
+  echonet:
+    external: true

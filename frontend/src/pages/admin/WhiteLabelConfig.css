@@ -1,0 +1,236 @@
+.whitelabel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.config-card {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Color Picker ─────────────────────────────────── */
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-color);
+}
+
+.color-picker::-moz-color-swatch {
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-color);
+}
+
+/* ── Upload Dropzone (estado vazio) ───────────────── */
+.upload-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 160px;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface-color-light);
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    margin-top: 0.5rem;
+}
+
+.upload-dropzone:hover {
+    border-color: var(--primary-color);
+    background-color: var(--badge-purple-bg);
+}
+
+.upload-icon {
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.upload-dropzone:hover .upload-icon {
+    color: var(--primary-color);
+}
+
+.upload-cta {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.upload-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ── Preview Wrapper (container externo) ──────────── */
+.preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.preview-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* ── Preview da Logo ──────────────────────────────── */
+/* Caixa fixa: 100% de largura, 140px de altura, fundo xadrez (transparência) */
+.preview-logo-box {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    /* Xadrez para mostrar transparência */
+    background-image:
+        linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
+        linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    background-color: #f9fafb;
+}
+
+.preview-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+/* ── Preview do Background ────────────────────────── */
+/* Caixa fixa 16:9 relativa à largura: aspect-ratio não funciona em todos; usamos padding-top */
+.preview-bg-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color-light);
+}
+
+.preview-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.preview-bg-box:hover .preview-bg-img {
+    transform: scale(1.03);
+}
+
+.preview-bg-badge {
+    position: absolute;
+    top: 0.625rem;
+    left: 0.75rem;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+/* ── Overlay de ações (aparece no hover) ──────────── */
+.preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.preview-wrapper:hover .preview-overlay,
+.preview-wrapper.group:hover .preview-overlay {
+    opacity: 1;
+}
+
+.preview-remove-btn,
+.preview-change-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: none;
+}
+
+.preview-remove-btn {
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+}
+
+.preview-remove-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+.preview-change-btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text-primary);
+}
+
+.preview-change-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+/* ── Responsivo ───────────────────────────────────── */
+@media (max-width: 1024px) {
+    .config-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .whitelabel-container {
+        padding: 0 1rem 5rem;
+    }
+
+    .preview-logo-box,
+    .preview-bg-box {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}

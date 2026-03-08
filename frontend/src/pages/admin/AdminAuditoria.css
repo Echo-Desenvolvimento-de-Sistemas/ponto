@@ -1,0 +1,87 @@
+.auditoria-table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.diff-cell {
+    min-width: 450px;
+    padding: 1rem !important;
+}
+
+.diff-box {
+    background: var(--surface-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    overflow-x: auto;
+}
+
+.diff-box.before {
+    border-left: 3px solid #f87171;
+    background-color: #fef2f2;
+}
+
+.diff-box.after {
+    border-left: 3px solid #4ade80;
+    background-color: #f0fdf4;
+}
+
+.diff-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+.json-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.json-line {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.json-key {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.json-val {
+    color: var(--text-primary);
+    font-family: 'Space Mono', monospace;
+    word-break: break-all;
+}
+
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-blue {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.badge-purple {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+.badge-red {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.badge-gray {
+    background: #f3f4f6;
+    color: #4b5563;
+}

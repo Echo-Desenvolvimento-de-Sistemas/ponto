@@ -1,0 +1,654 @@
+.bater-ponto-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-top: 0.5rem;
+}
+
+/* Company Logo Header - replaces the old fixed top header */
+.company-logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 1rem 0.5rem;
+    animation-delay: 0s;
+}
+
+.company-logo-img {
+    max-height: 40px;
+    max-width: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.12));
+}
+
+.company-logo-fallback {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mobile-mockup-frame {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* User Header Card */
+.user-header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-full);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.user-avatar-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.greeting p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.1rem;
+}
+
+.greeting h2 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.actions-top {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--surface-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: var(--border-highlight);
+}
+
+/* Main Main Info Card (The large one) */
+.main-info-card {
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--badge-red-text);
+    background: var(--surface-color);
+}
+
+.clock-area {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.clock-area h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-feature-settings: "tnum";
+}
+
+.clock-area p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Botoes Grandes na grid */
+.action-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-ponto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-ponto:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-ponto:disabled {
+    opacity: 0.5;
+    filter: grayscale(0.5);
+    cursor: not-allowed;
+}
+
+.btn-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+}
+
+/* Hint de horário dentro do botão de almoço */
+.btn-horario-hint {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    opacity: 0.65;
+    margin-top: -0.4rem;
+    letter-spacing: 0.02em;
+}
+
+/* Colors for specific buttons matching pastel theme */
+.btn-entrada {
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+}
+
+.btn-entrada .btn-icon-wrapper {
+    background-color: var(--badge-green-bg);
+    color: var(--badge-green-text);
+}
+
+.btn-saida {
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+}
+
+.btn-saida .btn-icon-wrapper {
+    background-color: var(--badge-red-bg);
+    color: var(--badge-red-text);
+}
+
+.btn-intervalo-out {
+    background-color: var(--primary-color);
+    color: #1e1e1e;
+    grid-column: span 2;
+    flex-direction: row;
+    padding: 1.25rem;
+}
+
+.btn-intervalo-out .btn-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #1e1e1e;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0;
+}
+
+.btn-intervalo-in {
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+    grid-column: span 2;
+    flex-direction: row;
+    padding: 1.25rem;
+}
+
+.btn-intervalo-in .btn-icon-wrapper {
+    background-color: var(--badge-blue-bg);
+    color: #3b82f6;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0;
+}
+
+/* Map Status Card */
+.status-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background-color: var(--surface-color);
+}
+
+.status-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.status-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--badge-green-bg);
+    color: var(--badge-green-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-icon.loading {
+    background-color: var(--badge-blue-bg);
+    color: #3b82f6;
+}
+
+.status-icon.error {
+    background-color: var(--badge-red-bg);
+    color: var(--badge-red-text);
+}
+
+.status-texts h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+}
+
+.status-texts p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.message-banner {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.message-banner.success {
+    background-color: var(--badge-green-bg);
+    color: var(--badge-green-text);
+}
+
+.message-banner.error {
+    background-color: var(--badge-red-bg);
+    color: var(--badge-red-text);
+}
+
+.message-banner.info {
+    background-color: var(--badge-blue-bg);
+    color: #2563eb;
+}
+
+/* Journey Summary Cards */
+.journey-summary-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.mini-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.proximo-passo-card {
+    grid-column: span 2;
+}
+
+.mini-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mini-card-icon-right {
+    margin-left: auto;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+}
+
+.mini-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mini-card-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.mini-card-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.predict-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-hover);
+}
+
+.mini-card-progress {
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    margin-top: 0.25rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease-out;
+}
+
+/* Timeline */
+.timeline-card {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: var(--radius-md);
+}
+
+.timeline-item:hover {
+    background-color: var(--surface-color-light);
+}
+
+.timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 24px;
+}
+
+.timeline-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 2;
+}
+
+.timeline-dot.success {
+    background-color: var(--badge-green-text);
+}
+
+.timeline-dot.warning {
+    background-color: #f97316;
+    /* Orange */
+}
+
+.timeline-line {
+    width: 2px;
+    flex: 1;
+    background-color: var(--border-color);
+    margin-top: 4px;
+    margin-bottom: -16px;
+    /* connect dots */
+}
+
+.timeline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline-content-header h4 {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.timeline-time {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-chevron {
+    display: flex;
+    align-items: center;
+    color: var(--border-highlight);
+    padding-right: 0.5rem;
+}
+
+/* Comprovante Modal */
+.comprovante-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.comprovante-modal {
+    width: 100%;
+    max-width: 380px;
+    background-color: var(--surface-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-primary);
+}
+
+.comprovante-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.comprovante-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--badge-green-bg);
+    color: var(--badge-green-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.comprovante-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.comprovante-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.detail-row span {
+    color: var(--text-secondary);
+}
+
+.hash-box {
+    margin-top: 1rem;
+    background-color: var(--surface-color-light);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hash-box span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hash-box code {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    word-break: break-all;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .comprovante-modal-overlay,
+    .comprovante-modal,
+    .comprovante-modal * {
+        visibility: visible;
+    }
+
+    .comprovante-modal-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white !important;
+        padding: 0;
+        backdrop-filter: none;
+    }
+
+    .comprovante-modal {
+        box-shadow: none !important;
+        max-width: none !important;
+        width: 100% !important;
+        border-radius: 0;
+        padding: 2rem;
+        background: white !important;
+    }
+
+    .no-print,
+    .modal-close-btn {
+        display: none !important;
+    }
+}

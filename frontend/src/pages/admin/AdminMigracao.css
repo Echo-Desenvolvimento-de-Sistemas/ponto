@@ -1,0 +1,72 @@
+.admin-migracao-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.users-table th {
+    background-color: var(--surface-color-light);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.users-table td {
+    padding: 1rem 1.5rem;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.users-table tr:hover td {
+    background-color: var(--surface-color-light);
+}
+
+.role-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: var(--badge-purple-bg);
+    color: var(--primary-color);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.status-badge.error {
+    background-color: var(--badge-red-bg);
+    color: var(--badge-red-text);
+}
+
+.status-badge.success {
+    background-color: var(--badge-green-bg);
+    color: var(--badge-green-text);
+}

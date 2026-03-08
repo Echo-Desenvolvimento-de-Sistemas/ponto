@@ -1,0 +1,969 @@
+{
+    "users": [
+        {
+            "external_id": 1,
+            "name": "Administrador",
+            "email": "admin@admin.com",
+            "role": "admin"
+        },
+        {
+            "external_id": 3,
+            "name": "Secretaria",
+            "email": "secretaria@rosa.com",
+            "role": "secretaria"
+        },
+        {
+            "external_id": 4,
+            "name": "Manoel Carlos da Silva Neto",
+            "email": "09664341452@responsavel.sistema",
+            "role": "responsavel"
+        },
+        {
+            "external_id": 5,
+            "name": "Usu\u00e1rio Aluno",
+            "email": "aluno@mail.com",
+            "role": "aluno"
+        },
+        {
+            "external_id": 6,
+            "name": "Aluno da Silva",
+            "email": "12312312323@aluno.sistema",
+            "role": "aluno"
+        },
+        {
+            "external_id": 8,
+            "name": "Juan da Concei\u00e7\u00e3o Coelho",
+            "email": "juandaconceicao8@gmail.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 9,
+            "name": "Fl\u00e1vio Salazar",
+            "email": "professor@example.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 10,
+            "name": "Ellen da Silva Alves",
+            "email": "ellen@rosa.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 11,
+            "name": "Sanidio Martins Soares",
+            "email": "sanidio@rosa.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 12,
+            "name": "Mariana Cordeiro da Silva",
+            "email": "mariana@rosa.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 13,
+            "name": "Leilane Od\u00edlia Santos",
+            "email": "leilane@rosa.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 14,
+            "name": "Hebberton Luciano Monteiro",
+            "email": "hebberton@rosa.com",
+            "role": "secretaria"
+        },
+        {
+            "external_id": 15,
+            "name": "Islayne Lacerda",
+            "email": "islayne@rosa.com",
+            "role": "secretaria"
+        },
+        {
+            "external_id": 16,
+            "name": "Maria Eduarda Nunes Silva",
+            "email": "maria@rosa.com",
+            "role": "professor"
+        },
+        {
+            "external_id": 17,
+            "name": "Vitor Akio",
+            "email": "akio@rosa.com",
+            "role": "professor"
+        }
+    ],
+    "students": [
+        {
+            "external_id": 1,
+            "name": "ANA CECILIA SANTANA DIAS NOVAIS",
+            "cpf": "15147090401",
+            "birth_date": "2018-01-09T02:00:00.000000Z",
+            "class_room_id": 7,
+            "status": "active"
+        },
+        {
+            "external_id": 2,
+            "name": "Ana Sofia Leandro Pereira",
+            "cpf": "708.864.834-12",
+            "birth_date": "2014-05-31T03:00:00.000000Z",
+            "class_room_id": 12,
+            "status": "active"
+        },
+        {
+            "external_id": 3,
+            "name": "Ana Sophia Coelho Santana",
+            "cpf": "090.627.085-52",
+            "birth_date": "2015-09-03T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 4,
+            "name": "Angelo Isaac Tavares Santos ",
+            "cpf": "13295036519",
+            "birth_date": "2013-01-01T02:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 5,
+            "name": "ANTONIO MIGUEL DE SOUZA COELHO",
+            "cpf": "71087434424",
+            "birth_date": "2014-12-29T02:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 6,
+            "name": "Ayra Elo\u00e1 Amorim Gomes ",
+            "cpf": "71674165412",
+            "birth_date": "2016-04-06T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 7,
+            "name": "Caio Lucas Bastos Cruz",
+            "cpf": "08448123581",
+            "birth_date": "2013-04-28T03:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 8,
+            "name": "Caio Victor de Souza Rodrigues",
+            "cpf": "150.994.344-86",
+            "birth_date": "2026-07-04T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 9,
+            "name": "Calebe Soares dos Santos ",
+            "cpf": "71116620405",
+            "birth_date": "2015-03-26T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 10,
+            "name": "Carlos Henrique Menezes da Silva",
+            "cpf": "08108183537",
+            "birth_date": "2014-10-06T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 11,
+            "name": "Daniel Ribeiro Rocha",
+            "cpf": "131.136.685-73",
+            "birth_date": "2022-12-19T03:00:00.000000Z",
+            "class_room_id": null,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 12,
+            "name": "Ed'Benjamim dos Santos Ribeiro ",
+            "cpf": "13483826432",
+            "birth_date": "2015-09-02T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 13,
+            "name": "ELI GABRIEL",
+            "cpf": "16695223424",
+            "birth_date": "2025-08-13T03:00:00.000000Z",
+            "class_room_id": 3,
+            "status": "active"
+        },
+        {
+            "external_id": 14,
+            "name": "EMERSON KALEO PEREIRA DE SOUZA RODRIGUES",
+            "cpf": "166.654.644-58",
+            "birth_date": "2019-08-14T03:00:00.000000Z",
+            "class_room_id": 3,
+            "status": "active"
+        },
+        {
+            "external_id": 15,
+            "name": "Ester Mariano Siqueira",
+            "cpf": "149.729.874-13",
+            "birth_date": "2017-11-11T02:00:00.000000Z",
+            "class_room_id": null,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 16,
+            "name": "Fernando Ribeiro Rocha",
+            "cpf": "563.129.778-70",
+            "birth_date": "2019-01-01T02:00:00.000000Z",
+            "class_room_id": 7,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 17,
+            "name": "HEITOR GABRIEL MAGALHAES CAMPOS SILVA",
+            "cpf": "18295184458",
+            "birth_date": "2022-09-23T03:00:00.000000Z",
+            "class_room_id": 5,
+            "status": "active"
+        },
+        {
+            "external_id": 18,
+            "name": "Helena",
+            "cpf": "177.313.674-79",
+            "birth_date": "2021-07-03T03:00:00.000000Z",
+            "class_room_id": 6,
+            "status": "active"
+        },
+        {
+            "external_id": 19,
+            "name": "Hemilly Vit\u00f3ria Oliveira Guedes",
+            "cpf": "158.879.754-66",
+            "birth_date": "2018-09-05T03:00:00.000000Z",
+            "class_room_id": 7,
+            "status": "active"
+        },
+        {
+            "external_id": 20,
+            "name": "\u00cdcaro Matheus do Nascimento Barros",
+            "cpf": "126.502.414-63",
+            "birth_date": "2014-04-29T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 21,
+            "name": "ILANA DOS SANTOS MEDEIROS",
+            "cpf": "117.307.034-61",
+            "birth_date": "2012-03-16T03:00:00.000000Z",
+            "class_room_id": 14,
+            "status": "active"
+        },
+        {
+            "external_id": 22,
+            "name": "Isabelle Macedo Fraga",
+            "cpf": "174.018.774-14",
+            "birth_date": "2020-10-30T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 23,
+            "name": "Jo\u00e3o Gabriel Marcelino dos Santos",
+            "cpf": "152.737.264-25",
+            "birth_date": "2015-04-16T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 24,
+            "name": "Jo\u00e3o Guilherme Alves de Carvalho",
+            "cpf": "142.581.334-85",
+            "birth_date": "2017-01-10T02:00:00.000000Z",
+            "class_room_id": 9,
+            "status": "active"
+        },
+        {
+            "external_id": 25,
+            "name": "JOAO MIGUEL SOUZA AGUIAR",
+            "cpf": "712.569.984-78",
+            "birth_date": "2015-04-22T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 26,
+            "name": "Joaquim Andrade dos Santos",
+            "cpf": "137.753.714-51",
+            "birth_date": "2016-04-24T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 27,
+            "name": "Jos\u00e9 Evandro campos Maciel lima ",
+            "cpf": "13693386439",
+            "birth_date": "2025-11-01T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 28,
+            "name": "LARA LOHANA DE SOUZA DIAS",
+            "cpf": "71622021444",
+            "birth_date": "2011-10-08T03:00:00.000000Z",
+            "class_room_id": 14,
+            "status": "active"
+        },
+        {
+            "external_id": 29,
+            "name": "Liz Emanuelli Parente Silva",
+            "cpf": "178.818.434-38",
+            "birth_date": "2021-10-22T03:00:00.000000Z",
+            "class_room_id": 6,
+            "status": "active"
+        },
+        {
+            "external_id": 30,
+            "name": "Luiz Eduardo dos Santos Nascimento",
+            "cpf": "168.193.444-22",
+            "birth_date": "2019-11-10T03:00:00.000000Z",
+            "class_room_id": 3,
+            "status": "active"
+        },
+        {
+            "external_id": 31,
+            "name": "LUIZ FERNANDO OLIVEIRA DA SILVA",
+            "cpf": "714.276.834-76",
+            "birth_date": "2012-11-18T02:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 32,
+            "name": "Luiza Vict\u00f3ria Alves Soveral ",
+            "cpf": "712.665.484-75",
+            "birth_date": "2014-08-23T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "cancelled"
+        },
+        {
+            "external_id": 33,
+            "name": "Maria Eduarda Alves de Carvalho",
+            "cpf": "142.581.954-05",
+            "birth_date": "2017-01-10T02:00:00.000000Z",
+            "class_room_id": 9,
+            "status": "active"
+        },
+        {
+            "external_id": 34,
+            "name": "Maria Eliza Andrade dos Santos",
+            "cpf": "713.657.044-16",
+            "birth_date": "2012-09-14T03:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 35,
+            "name": "MARIA JULIA AMORIM ARAUJO DOS SANTOS",
+            "cpf": "704.808.544-40",
+            "birth_date": "2013-03-09T03:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 36,
+            "name": "Matheus Souza de Siqueira",
+            "cpf": "150.232.004-50",
+            "birth_date": "2017-12-05T02:00:00.000000Z",
+            "class_room_id": 7,
+            "status": "active"
+        },
+        {
+            "external_id": 37,
+            "name": "MURILO EMANOEL SILVA GON\u00c7ALVES",
+            "cpf": "53192165804",
+            "birth_date": "2014-03-23T03:00:00.000000Z",
+            "class_room_id": 12,
+            "status": "active"
+        },
+        {
+            "external_id": 38,
+            "name": "Ramon Italo praxedes de Ara\u00fajo ",
+            "cpf": "71364916495",
+            "birth_date": "2013-09-12T03:00:00.000000Z",
+            "class_room_id": 12,
+            "status": "active"
+        },
+        {
+            "external_id": 39,
+            "name": "Rebeca Soares dos Santos ",
+            "cpf": "001.112.864-09",
+            "birth_date": "2023-11-24T03:00:00.000000Z",
+            "class_room_id": 8,
+            "status": "active"
+        },
+        {
+            "external_id": 40,
+            "name": "RHAYNER THIATO RAMOS DE ANDRADE",
+            "cpf": "13751463437",
+            "birth_date": "2016-03-03T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 41,
+            "name": "Saulo Bezerra Rodrigues",
+            "cpf": "07108203440",
+            "birth_date": "2016-03-07T03:00:00.000000Z",
+            "class_room_id": 10,
+            "status": "active"
+        },
+        {
+            "external_id": 42,
+            "name": "Sofia Alves Soveral ",
+            "cpf": "177.195.494-90",
+            "birth_date": "2021-06-27T03:00:00.000000Z",
+            "class_room_id": 6,
+            "status": "active"
+        },
+        {
+            "external_id": 43,
+            "name": "Suellen Bezerra Rorigues",
+            "cpf": "71508204411",
+            "birth_date": "2014-03-08T03:00:00.000000Z",
+            "class_room_id": 12,
+            "status": "active"
+        },
+        {
+            "external_id": 44,
+            "name": "Thayza Raysa",
+            "cpf": "716.401.634-84",
+            "birth_date": "2014-12-08T02:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 45,
+            "name": "VALENTINA VITORIA DE SOUZA MELO",
+            "cpf": "71787080420",
+            "birth_date": "2013-01-05T02:00:00.000000Z",
+            "class_room_id": 13,
+            "status": "active"
+        },
+        {
+            "external_id": 46,
+            "name": "Victor aparecido sirqueira de Ara\u00fajo ",
+            "cpf": "168.404.974-10",
+            "birth_date": "2019-10-27T03:00:00.000000Z",
+            "class_room_id": 3,
+            "status": "active"
+        },
+        {
+            "external_id": 47,
+            "name": "VICTOR GABRIEL ALMEIDA RIBEIRO",
+            "cpf": "12487332409",
+            "birth_date": "2013-10-15T03:00:00.000000Z",
+            "class_room_id": 12,
+            "status": "active"
+        },
+        {
+            "external_id": 48,
+            "name": "Witalo Juan Martins da Silva",
+            "cpf": "164.484.244-07",
+            "birth_date": "2014-02-25T03:00:00.000000Z",
+            "class_room_id": 11,
+            "status": "active"
+        },
+        {
+            "external_id": 49,
+            "name": "Aluno da Silva",
+            "cpf": "12312312323",
+            "birth_date": "2026-02-12T03:00:00.000000Z",
+            "class_room_id": 14,
+            "status": "active"
+        }
+    ],
+    "class_rooms": [
+        {
+            "external_id": 3,
+            "name": "1\u00ba ano",
+            "grade_id": 1,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 5,
+            "name": "G3",
+            "grade_id": 12,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 6,
+            "name": "G4",
+            "grade_id": 13,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 7,
+            "name": "2\u00ba ano",
+            "grade_id": 2,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 8,
+            "name": "G2",
+            "grade_id": 11,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 9,
+            "name": "4\u00b0 Ano",
+            "grade_id": 4,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 10,
+            "name": "5\u00b0 Ano",
+            "grade_id": 5,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 11,
+            "name": "6\u00b0 Ano",
+            "grade_id": 6,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 12,
+            "name": "7\u00b0 Ano",
+            "grade_id": 7,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 13,
+            "name": "8\u00b0 Ano",
+            "grade_id": 8,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 14,
+            "name": "9\u00b0 Ano",
+            "grade_id": 10,
+            "shift": "matutino",
+            "academic_year_id": 2
+        },
+        {
+            "external_id": 15,
+            "name": "Turma 101",
+            "grade_id": 1,
+            "shift": "matutino",
+            "academic_year_id": 4
+        },
+        {
+            "external_id": 16,
+            "name": "Turma 201",
+            "grade_id": 2,
+            "shift": "vespertino",
+            "academic_year_id": 4
+        },
+        {
+            "external_id": 17,
+            "name": "3\u00ba Ano",
+            "grade_id": 3,
+            "shift": "matutino",
+            "academic_year_id": 2
+        }
+    ],
+    "allocations": [
+        {
+            "external_id": 5,
+            "user_id": 9,
+            "class_room_id": 15,
+            "subject_id": 1
+        },
+        {
+            "external_id": 6,
+            "user_id": 9,
+            "class_room_id": 15,
+            "subject_id": 2
+        },
+        {
+            "external_id": 7,
+            "user_id": 9,
+            "class_room_id": 16,
+            "subject_id": 3
+        },
+        {
+            "external_id": 8,
+            "user_id": 10,
+            "class_room_id": 11,
+            "subject_id": 6
+        },
+        {
+            "external_id": 9,
+            "user_id": 10,
+            "class_room_id": 11,
+            "subject_id": 8
+        },
+        {
+            "external_id": 10,
+            "user_id": 10,
+            "class_room_id": 11,
+            "subject_id": 7
+        },
+        {
+            "external_id": 11,
+            "user_id": 10,
+            "class_room_id": 12,
+            "subject_id": 7
+        },
+        {
+            "external_id": 12,
+            "user_id": 10,
+            "class_room_id": 12,
+            "subject_id": 8
+        },
+        {
+            "external_id": 13,
+            "user_id": 10,
+            "class_room_id": 12,
+            "subject_id": 6
+        },
+        {
+            "external_id": 14,
+            "user_id": 10,
+            "class_room_id": 13,
+            "subject_id": 8
+        },
+        {
+            "external_id": 15,
+            "user_id": 10,
+            "class_room_id": 13,
+            "subject_id": 6
+        },
+        {
+            "external_id": 16,
+            "user_id": 10,
+            "class_room_id": 13,
+            "subject_id": 7
+        },
+        {
+            "external_id": 17,
+            "user_id": 10,
+            "class_room_id": 14,
+            "subject_id": 6
+        },
+        {
+            "external_id": 18,
+            "user_id": 10,
+            "class_room_id": 14,
+            "subject_id": 7
+        },
+        {
+            "external_id": 19,
+            "user_id": 10,
+            "class_room_id": 14,
+            "subject_id": 8
+        },
+        {
+            "external_id": 20,
+            "user_id": 10,
+            "class_room_id": 10,
+            "subject_id": 6
+        },
+        {
+            "external_id": 21,
+            "user_id": 10,
+            "class_room_id": 10,
+            "subject_id": 7
+        },
+        {
+            "external_id": 22,
+            "user_id": 10,
+            "class_room_id": 10,
+            "subject_id": 8
+        },
+        {
+            "external_id": 23,
+            "user_id": 11,
+            "class_room_id": 11,
+            "subject_id": 1
+        },
+        {
+            "external_id": 24,
+            "user_id": 11,
+            "class_room_id": 12,
+            "subject_id": 1
+        },
+        {
+            "external_id": 25,
+            "user_id": 11,
+            "class_room_id": 13,
+            "subject_id": 1
+        },
+        {
+            "external_id": 26,
+            "user_id": 11,
+            "class_room_id": 14,
+            "subject_id": 1
+        },
+        {
+            "external_id": 27,
+            "user_id": 11,
+            "class_room_id": 10,
+            "subject_id": 1
+        },
+        {
+            "external_id": 28,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 1
+        },
+        {
+            "external_id": 29,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 2
+        },
+        {
+            "external_id": 30,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 3
+        },
+        {
+            "external_id": 31,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 4
+        },
+        {
+            "external_id": 32,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 5
+        },
+        {
+            "external_id": 33,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 6
+        },
+        {
+            "external_id": 34,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 7
+        },
+        {
+            "external_id": 35,
+            "user_id": 12,
+            "class_room_id": 3,
+            "subject_id": 8
+        },
+        {
+            "external_id": 36,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 1
+        },
+        {
+            "external_id": 37,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 2
+        },
+        {
+            "external_id": 38,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 3
+        },
+        {
+            "external_id": 39,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 4
+        },
+        {
+            "external_id": 40,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 5
+        },
+        {
+            "external_id": 41,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 6
+        },
+        {
+            "external_id": 42,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 7
+        },
+        {
+            "external_id": 43,
+            "user_id": 13,
+            "class_room_id": 8,
+            "subject_id": 8
+        },
+        {
+            "external_id": 44,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 2
+        },
+        {
+            "external_id": 45,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 1
+        },
+        {
+            "external_id": 46,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 3
+        },
+        {
+            "external_id": 47,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 4
+        },
+        {
+            "external_id": 48,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 5
+        },
+        {
+            "external_id": 49,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 6
+        },
+        {
+            "external_id": 50,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 7
+        },
+        {
+            "external_id": 51,
+            "user_id": 13,
+            "class_room_id": 5,
+            "subject_id": 8
+        },
+        {
+            "external_id": 52,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 1
+        },
+        {
+            "external_id": 53,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 2
+        },
+        {
+            "external_id": 54,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 3
+        },
+        {
+            "external_id": 55,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 4
+        },
+        {
+            "external_id": 56,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 5
+        },
+        {
+            "external_id": 57,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 6
+        },
+        {
+            "external_id": 58,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 7
+        },
+        {
+            "external_id": 59,
+            "user_id": 13,
+            "class_room_id": 6,
+            "subject_id": 8
+        },
+        {
+            "external_id": 68,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 1
+        },
+        {
+            "external_id": 69,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 2
+        },
+        {
+            "external_id": 70,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 3
+        },
+        {
+            "external_id": 71,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 4
+        },
+        {
+            "external_id": 72,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 5
+        },
+        {
+            "external_id": 73,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 6
+        },
+        {
+            "external_id": 74,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 7
+        },
+        {
+            "external_id": 75,
+            "user_id": 16,
+            "class_room_id": 7,
+            "subject_id": 8
+        }
+    ],
+    "generated_at": "2026-03-06T20:12:17-03:00"
+}

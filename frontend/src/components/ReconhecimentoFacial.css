@@ -1,0 +1,119 @@
+.reconhecimento-facial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #000;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4/3;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+    /* Espelhar a câmera */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: scaleX(-1);
+    /* Espelhar o canvas também */
+}
+
+.face-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.face-overlay.success {
+    border-color: #10b981;
+    border-style: solid;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--primary-color);
+    border-style: solid;
+    opacity: 0.8;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    border-width: 4px 0 0 4px;
+    border-radius: 4px 0 0 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    border-width: 4px 4px 0 0;
+    border-radius: 0 4px 0 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 4px 4px;
+    border-radius: 0 0 0 4px;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-width: 0 4px 4px 0;
+    border-radius: 0 0 4px 0;
+}
+
+.status-badge {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.status-badge.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .face-overlay {
+        width: 200px;
+        height: 200px;
+    }
+}

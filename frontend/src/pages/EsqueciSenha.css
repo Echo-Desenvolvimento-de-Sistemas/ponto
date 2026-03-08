@@ -1,0 +1,112 @@
+/* EsqueciSenha.css */
+
+.esqueci-header {
+    margin-bottom: 1.5rem;
+}
+
+.role-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.role-card:hover {
+    border-color: var(--primary-color, #a855f7);
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.1);
+    transform: translateY(-2px);
+}
+
+.role-card:active {
+    transform: translateY(0);
+}
+
+.role-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.role-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.role-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+.role-desc {
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #1a1a1a;
+}
+
+.info-box {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.success-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #f0fdf4;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .role-card {
+        padding: 1rem;
+    }
+
+    .role-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
