@@ -1,70 +1,88 @@
-# Guia de Deploy - Sistema de Ponto 🚀
+# Guia de Deploy Passo a Passo - Ponto 🚀
 
-Este guia detalha como realizar o build e o deploy da aplicação na sua VPS utilizando Docker Swarm e integrando-se à rede `echonet`.
+Este guia explica como levar o código do seu computador para a sua VPS e colocar o sistema no ar.
 
-## 1. Pré-requisitos na VPS
+## Passo 1: Preparar a Pasta na VPS
 
-- Docker instalado e modo **Swarm** ativado (`docker swarm init`).
-- Acesso à rede externa `echonet` (já existente na sua VPS).
-- Git instalado para clonar/puxar o repositório.
+Acesse sua VPS via SSH e crie a pasta onde o projeto vai ficar:
 
-## 2. Configuração de Variáveis de Ambiente
-
-Antes de rodar o deploy, você deve configurar os arquivos `.env` de produção baseando-se nos templates criados:
-
-### Backend (Laravel)
-Navegue até `backend/` e crie o arquivo `.env`:
 ```bash
-cp .env.production .env
-```
-> [!IMPORTANT]
-> Verifique se o `DB_PASSWORD` no `.env` está correto de acordo com o seu MariaDB (`Akio2604*`).
-
-### Frontend (React)
-Navegue até `frontend/` e crie o arquivo `.env`:
-```bash
-cp .env.production .env
+mkdir -p /root/projetos/ponto
+cd /root/projetos/ponto
 ```
 
-## 3. Realizando o Deploy
+## Passo 2: Clonar o Repositório
 
-Na raiz do projeto, você encontrará o script `deploy.sh`. Ele automatiza o build das imagens e o comando de stack do Swarm.
+Agora, baixe o código do GitHub para dentro dessa pasta:
 
 ```bash
-# Dar permissão de execução
+# Se for a primeira vez
+git clone https://github.com/Echo-Desenvolvimento-de-Sistemas/ponto.git .
+
+# Se você já clonou e só quer atualizar o código:
+git pull origin main
+```
+
+## Passo 3: Configurar os Arquivos .env (Muito Importante!)
+
+Os arquivos `.env` guardam as senhas e não vão para o GitHub por segurança (apenas os modelos `.env.production` que eu criei vão). Você precisa criá-los manualmente na VPS:
+
+### 3.1. Backend
+Entre na pasta do backend e crie o `.env`:
+```bash
+cd /root/projetos/ponto/backend
+cp .env.production .env
+```
+> [!TIP]
+> Use o comando `nano .env` para abrir o arquivo e conferir se a `DB_PASSWORD` é realmente `Akio2604*`. Se mudar algo, aperte `Ctrl+O` para salvar e `Ctrl+X` para sair.
+
+### 3.2. Frontend
+Entre na pasta do frontend e crie o `.env`:
+```bash
+cd /root/projetos/ponto/frontend
+cp .env.production .env
+```
+
+## Passo 4: Dar Permissão ao Script de Deploy
+
+Volte para a raiz do projeto e prepare o script que eu criei para você:
+
+```bash
+cd /root/projetos/ponto
 chmod +x deploy.sh
+```
 
-# Executar o deploy
+## Passo 5: Executar o Deploy 🚀
+
+Agora é só rodar o script. Ele vai construir as imagens (build) e subir os containers:
+
+```bash
 ./deploy.sh
 ```
 
-O comando interno que o script executa para subir a stack é:
-```bash
-docker stack deploy -c docker-compose.prod.yml ponto
-```
+---
 
-## 4. Comandos Úteis de Verificação
+## O que fazer se der erro?
 
-### Verificar se os serviços estão rodando:
-```bash
-docker stack ps ponto
-```
-
-### Ver logs do Backend (API):
-```bash
-docker service logs ponto_ponto-api -f
-```
-
-### Resolver problemas de permissão no Laravel:
-Se o site der erro 500 ou problemas de escrita em logs/storage:
+### 1. Erro de Permissão no Laravel (Site abre com erro 500)
+Se o site carregar mas der erro ao tentar salvar algo ou registrar ponto, rode este comando:
 ```bash
 docker exec $(docker ps -q -f name=ponto_ponto-api) chown -R www-data:www-data storage bootstrap/cache
 ```
 
-## 5. Acesso
+### 2. Ver se os containers subiram mesmo
+```bash
+docker stack ps ponto
+```
 
-- **Frontend**: `https://ponto.echo.dev.br`
-- **Backend/API**: `https://ponto.echo.dev.br/api`
+### 3. Ver os logs em tempo real (para debugar)
+```bash
+docker service logs ponto_ponto-api -f
+```
+
+## Acesso
+- **Site**: [https://ponto.echo.dev.br](https://ponto.echo.dev.br)
+- **API**: [https://ponto.echo.dev.br/api](https://ponto.echo.dev.br/api)
 
 ---
-*Gerado em: 08/03/2026*
+*Dica: Fique tranquilo, o `.env` que você criou manualmente na VPS NÃO será apagado quando você der `git pull` no futuro.*
