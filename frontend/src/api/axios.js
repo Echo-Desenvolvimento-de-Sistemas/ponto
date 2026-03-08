@@ -1,23 +1,8 @@
 import axios from 'axios';
 
 // Função para detectar a URL base dinamicamente
-const getBaseURL = () => {
-  const { hostname } = window.location;
-
-  // Se estiver acessando via localhost no PC
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return 'http://localhost:8000/api';
-  }
-
-  // Se estiver acessando via rede local (IP) ou túnel externo (Ngrok)
-  return `http://${hostname}:8000/api`;
-};
-
 const api = axios.create({
-  baseURL: getBaseURL(),
-  params: window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
-    ? { 'ngrok-skip-browser-warning': '1' }
-    : {},
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
