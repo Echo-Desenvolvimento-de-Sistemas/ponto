@@ -67,17 +67,42 @@ cd /root/projetos/ponto
 chmod +x deploy.sh
 ```
 
-## Passo 5: Executar o Deploy 🚀
-
-Agora é só rodar o script. Ele vai construir as imagens (build) e subir os containers:
-
+## Passo 5: Rodar o Deploy
 ```bash
 ./deploy.sh
 ```
 
+## Passo 6: Criar Usuários Iniciais (Seeder)
+Se o seu banco de dados estiver vazio, você precisa criar o usuário administrador inicial:
+
+```bash
+docker exec $(docker ps -q -f name=ponto_ponto-api) php artisan db:seed
+```
+
 ---
 
-## O que fazer se der erro?
+## 🔐 Credenciais Iniciais (Padrão do Sistema)
+
+Após rodar o seeder, use estes dados para o primeiro acesso:
+
+### 1. Administrador Global (SaaS)
+*   **E-mail:** `admin@pontonow.com`
+*   **Senha:** `admin123`
+*   **Função:** Gerenciar empresas e configurações globais.
+
+### 2. Gestor de RH (Empresa de Teste)
+*   **E-mail:** `rh@techcorp.com`
+*   **Senha:** `admin123`
+*   **Função:** Gerenciar funcionários da "Tech Corp".
+
+### 3. Funcionário (Teste)
+*   **E-mail:** `joao@techcorp.com`
+*   **Senha:** `senha123`
+*   **Função:** Registrar pontos no App.
+
+---
+
+## 🔍 Verificação e Logs
 
 ### 1. Erro de Permissão no Laravel (Site abre com erro 500)
 Se o site carregar mas der erro ao tentar salvar algo ou registrar ponto, rode este comando:
