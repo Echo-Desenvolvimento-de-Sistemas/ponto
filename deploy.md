@@ -76,7 +76,7 @@ chmod +x deploy.sh
 Se o seu banco de dados estiver vazio, você precisa criar o usuário administrador inicial:
 
 ```bash
-docker exec $(docker ps -q -f name=ponto_ponto-api) php artisan db:seed
+docker exec $(docker ps -q -f name=ponto_ponto-api) php artisan db:seed --force
 ```
 
 ---
