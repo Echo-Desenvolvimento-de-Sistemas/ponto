@@ -22,12 +22,13 @@ services:
 
   # FRONTEND - React + Nginx
   ponto-app:
-    image: ponto-frontend:latest
+    image: ponto-frontend:${IMAGE_TAG:-latest}
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
         - VITE_API_URL=https://ponto.echo.dev.br/api
+        - VITE_APP_VERSION=${IMAGE_TAG:-latest}
     networks:
       - echonet
     deploy:

@@ -265,6 +265,9 @@ const Login = () => {
                         <span style={{ display: 'block', marginTop: '0.5rem', fontSize: '0.8rem', color: '#9ca3af' }}>
                             <Link to="/privacidade" style={{ color: '#9ca3af', fontWeight: 500 }}>Política de Privacidade</Link>
                         </span>
+                        <span style={{ display: 'block', marginTop: '1rem', fontSize: '0.65rem', color: '#94a3b8', opacity: 0.5 }}>
+                            v_{import.meta.env.VITE_APP_VERSION || 'dev'}
+                        </span>
                     </div>
                 </div>
 

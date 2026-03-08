@@ -8,11 +8,15 @@ echo "🚀 Iniciando processo de deploy..."
 # 1. Carregar variáveis (opcional se já existirem no ambiente)
 # source .env
 
-# 2. Build das imagens locais
+# 2. Gerar Tag única por datetime (evita cache do Swarm)
+export IMAGE_TAG=$(date +%Y%m%d%H%M%S)
+echo "🏷️ Tag da imagem: $IMAGE_TAG"
+
+# 3. Build das imagens locais
 echo "📦 Construindo imagens Docker (sem cache para garantir atualização)..."
 docker compose -f docker-compose.prod.yml build --no-cache
 
-# 3. Deploy da Stack no Swarm
+# 4. Deploy da Stack no Swarm
 echo "🚢 Fazendo deploy da stack 'ponto'..."
 docker stack deploy -c docker-compose.prod.yml ponto
 

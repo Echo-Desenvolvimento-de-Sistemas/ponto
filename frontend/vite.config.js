@@ -5,10 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   server: {
     port: 3000,
-    allowedHosts: true,
-    headers: {
-      'ngrok-skip-browser-warning': 'true'
-    }
+    allowedHosts: true
   },
   plugins: [
     react(),

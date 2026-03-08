@@ -5,7 +5,9 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 ARG VITE_API_URL
+ARG VITE_APP_VERSION
 ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_APP_VERSION=$VITE_APP_VERSION
 RUN npm run build
 
 # Estágio de Produção
