@@ -38,9 +38,10 @@ services:
         - "traefik.http.routers.ponto-app.rule=Host(`ponto.echo.dev.br`)"
         - "traefik.http.routers.ponto-app.entrypoints=websecure"
         - "traefik.http.routers.ponto-app.tls.certresolver=myresolver"
+        - "traefik.http.routers.ponto-app.priority=1"
         - "traefik.http.services.ponto-app.loadbalancer.server.port=80"
 
-  # NGINX Proxy para o Backend (Opcional se usar Traefik direto no FPM, mas melhor com Nginx)
+  # NGINX Proxy para o Backend
   ponto-nginx:
     image: nginx:stable-alpine
     volumes:
@@ -53,9 +54,10 @@ services:
       replicas: 1
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.ponto-api.rule=Host(`api.ponto.echo.dev.br`)"
+        - "traefik.http.routers.ponto-api.rule=Host(`ponto.echo.dev.br`) && (PathPrefix(`/api`) || PathPrefix(`/storage`) || PathPrefix(`/sanctum`))"
         - "traefik.http.routers.ponto-api.entrypoints=websecure"
         - "traefik.http.routers.ponto-api.tls.certresolver=myresolver"
+        - "traefik.http.routers.ponto-api.priority=100"
         - "traefik.http.services.ponto-api.loadbalancer.server.port=80"
 
 networks:
