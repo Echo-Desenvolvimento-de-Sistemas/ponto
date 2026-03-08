@@ -27,7 +27,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        - VITE_API_URL=https://ponto.echo.dev.br/api
+        - VITE_API_URL=https://api.ponto.echo.dev.br/api
         - VITE_APP_VERSION=${IMAGE_TAG:-latest}
     networks:
       - echonet
@@ -55,7 +55,7 @@ services:
       replicas: 1
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.ponto-api.rule=Host(`ponto.echo.dev.br`) && (PathPrefix(`/api`) || PathPrefix(`/storage`) || PathPrefix(`/sanctum`))"
+        - "traefik.http.routers.ponto-api.rule=Host(`api.ponto.echo.dev.br`)"
         - "traefik.http.routers.ponto-api.entrypoints=websecure"
         - "traefik.http.routers.ponto-api.tls.certresolver=myresolver"
         - "traefik.http.routers.ponto-api.priority=100"
