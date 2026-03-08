@@ -46,6 +46,12 @@ export const subscribeUserToPush = async () => {
 
         if (!subscription) {
             const publicKey = import.meta.env.VITE_VAPID_PUBLIC_KEY;
+
+            if (!publicKey) {
+                console.warn('VITE_VAPID_PUBLIC_KEY não configurada. Subscrição de push abortada.');
+                return null;
+            }
+
             subscription = await registration.pushManager.subscribe({
                 userVisibleOnly: true,
                 applicationServerKey: urlBase64ToUint8Array(publicKey)
