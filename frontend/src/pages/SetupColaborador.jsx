@@ -83,7 +83,7 @@ const SetupColaborador = () => {
         }
     };
 
-    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'http://localhost:8000';
+    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'https://apiponto.echo.dev.br';
 
     if (status === 'loading') {
         return (
