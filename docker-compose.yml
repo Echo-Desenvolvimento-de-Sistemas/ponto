@@ -3,11 +3,9 @@ version: '3.8'
 services:
   # BACKEND - API LARAVEL
   ponto-api:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: pontonow_backend
-    restart: always
+    image: localhost:5000/pontonow-backend:latest
+    networks:
+      - echonet
     environment:
       - APP_NAME=PontoNow
       - APP_ENV=production
@@ -19,8 +17,6 @@ services:
       - DB_DATABASE=ponto
       - DB_USERNAME=root
       - DB_PASSWORD=Akio2604*
-    networks:
-      - echonet
     deploy:
       mode: replicated
       replicas: 1
@@ -33,11 +29,7 @@ services:
 
   # FRONTEND - REACT + VITE
   ponto-web:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: pontonow_frontend
-    restart: always
+    image: localhost:5000/pontonow-frontend:latest
     networks:
       - echonet
     deploy:
@@ -52,4 +44,4 @@ services:
 
 networks:
   echonet:
-    external: true
+    [cite_start]external: true [cite: 4]
