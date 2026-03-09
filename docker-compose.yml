@@ -1,16 +1,13 @@
 version: '3.8'
 
 services:
-  # BACKEND - API LARAVEL
   ponto-api:
-    image: localhost:5000/pontonow-backend:latest
+    image: pontonow-backend:latest
     networks:
       - echonet
     environment:
       - APP_NAME=PontoNow
       - APP_ENV=production
-      - APP_DEBUG=false
-      - APP_URL=https://apiponto.echo.dev.br
       - DB_CONNECTION=mysql
       - DB_HOST=mariadb
       - DB_PORT=3306
@@ -18,8 +15,6 @@ services:
       - DB_USERNAME=root
       - DB_PASSWORD=Akio2604*
     deploy:
-      mode: replicated
-      replicas: 1
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.ponto-api.rule=Host(`apiponto.echo.dev.br`)"
@@ -27,14 +22,11 @@ services:
         - "traefik.http.routers.ponto-api.tls.certresolver=myresolver"
         - "traefik.http.services.ponto-api.loadbalancer.server.port=9000"
 
-  # FRONTEND - REACT + VITE
   ponto-web:
-    image: localhost:5000/pontonow-frontend:latest
+    image: pontonow-frontend:latest
     networks:
       - echonet
     deploy:
-      mode: replicated
-      replicas: 1
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.ponto-web.rule=Host(`ponto.echo.dev.br`)"
@@ -44,4 +36,4 @@ services:
 
 networks:
   echonet:
-    [cite_start]external: true [cite: 4]
+    external: true
