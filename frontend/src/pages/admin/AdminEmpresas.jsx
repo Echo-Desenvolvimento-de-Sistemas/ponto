@@ -106,7 +106,7 @@ const AdminEmpresas = () => {
             const response = await api.post('/convites/gerar', { empresa_id: empresa.id });
             const link = response.data.link;
 
-            // Replaces http://localhost:8000 (backend) with frontend domain for the invite link
+            // Replaces backend domain with frontend domain for the invite link
             const url = new URL(link);
             const frontendUrl = `${window.location.origin}${url.pathname}`;
 

@@ -15,7 +15,7 @@ export const fixBackendUrl = (url) => {
     if (url.startsWith('/')) {
         const baseUrl = import.meta.env.VITE_API_URL
             ? import.meta.env.VITE_API_URL.replace('/api', '')
-            : window.location.origin;
+            : 'https://apiponto.echo.dev.br';
         return `${baseUrl}${url}`;
     }
 
