@@ -11,7 +11,6 @@ services:
     environment:
       - APP_NAME=PontoNow
       - APP_ENV=production
-      - APP_KEY=base64:$(php artisan key:generate --show) # Sugestão: Defina uma chave fixa depois
       - APP_DEBUG=false
       - APP_URL=https://apiponto.echo.dev.br
       - DB_CONNECTION=mysql
