@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # BACKEND - API LARAVEL
+  ponto-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pontonow_backend
+    restart: always
+    environment:
+      - APP_NAME=PontoNow
+      - APP_ENV=production
+      - APP_KEY=base64:$(php artisan key:generate --show) # Sugestão: Defina uma chave fixa depois
+      - APP_DEBUG=false
+      - APP_URL=https://apiponto.echo.dev.br
+      - DB_CONNECTION=mysql
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=ponto
+      - DB_USERNAME=root
+      - DB_PASSWORD=Akio2604*
+    networks:
+      - echonet
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ponto-api.rule=Host(`apiponto.echo.dev.br`)"
+        - "traefik.http.routers.ponto-api.entrypoints=websecure"
+        - "traefik.http.routers.ponto-api.tls.certresolver=myresolver"
+        - "traefik.http.services.ponto-api.loadbalancer.server.port=9000"
+
+  # FRONTEND - REACT + VITE
+  ponto-web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pontonow_frontend
+    restart: always
+    networks:
+      - echonet
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ponto-web.rule=Host(`ponto.echo.dev.br`)"
+        - "traefik.http.routers.ponto-web.entrypoints=websecure"
+        - "traefik.http.routers.ponto-web.tls.certresolver=myresolver"
+        - "traefik.http.services.ponto-web.loadbalancer.server.port=80"
+
+networks:
+  echonet:
+    external: true
