@@ -1,38 +1,20 @@
 FROM php:8.2-fpm
 
-# Instalar dependências do sistema
+# Instala dependências do sistema
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    libzip-dev
+    libpng-dev libjpeg-dev libfreetype6-dev zip libzip-dev unzip git curl \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql gd zip bcmath
 
-# Limpar cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Instalar extensões PHP
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
-
-# Obter o Composer mais recente
+# Instala Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Definir diretório de trabalho
 WORKDIR /var/www
+COPY . .
+RUN composer install --no-dev --optimize-autoloader
 
-# Copiar arquivos existentes do diretório do aplicativo
-COPY . /var/www
-
-# Instalar dependências do Composer
-RUN composer install --no-dev --optimize-autoloader --no-interaction
-
-# Ajustar permissões e entrypoint
-RUN chmod +x /var/www/docker-entrypoint.sh
-RUN mkdir -p /var/www/bootstrap/cache
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+# Permissões para o Laravel
+RUN chown -R www-data:www-data /var/www/storage /var/www/cache
 
 EXPOSE 9000
-ENTRYPOINT ["/var/www/docker-entrypoint.sh"]
+CMD ["php-fpm"]

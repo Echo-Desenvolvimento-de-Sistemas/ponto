@@ -6,7 +6,6 @@ import { Loader2, Eye, EyeOff, Mail, CreditCard, AlarmClockPlus } from 'lucide-r
 import api from '../api/axios';
 import FloatingIconsLoader from '../components/ui/FloatingIconsLoader';
 import usePageTitle from '../utils/usePageTitle';
-import { fixBackendUrl } from '../utils/urlUtils';
 import './Login.css';
 
 // Formata CPF: 000.000.000-00
@@ -57,12 +56,7 @@ const Login = () => {
             try {
                 const response = await api.get('/whitelabel');
                 if (response.data) {
-                    const normalizedData = {
-                        ...response.data,
-                        logoUrl: fixBackendUrl(response.data.logoUrl),
-                        loginBgUrl: fixBackendUrl(response.data.loginBgUrl)
-                    };
-                    setWhitelabel(normalizedData);
+                    setWhitelabel(response.data);
                     if (response.data.primaryColor) {
                         document.documentElement.style.setProperty('--primary-color', response.data.primaryColor);
                     }
@@ -264,9 +258,6 @@ const Login = () => {
                         <a href="#">Contate o RH</a>
                         <span style={{ display: 'block', marginTop: '0.5rem', fontSize: '0.8rem', color: '#9ca3af' }}>
                             <Link to="/privacidade" style={{ color: '#9ca3af', fontWeight: 500 }}>Política de Privacidade</Link>
-                        </span>
-                        <span style={{ display: 'block', marginTop: '1rem', fontSize: '0.65rem', color: '#94a3b8', opacity: 0.5 }}>
-                            v_{import.meta.env.VITE_APP_VERSION || 'dev'}
                         </span>
                     </div>
                 </div>

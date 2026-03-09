@@ -16,7 +16,7 @@ const AdminOcorrencias = () => {
     const [actionModal, setActionModal] = useState({ isOpen: false, id: null, type: null, observacao: '' });
     usePageTitle('Ocorrências');
 
-    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : window.location.origin;
+    const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : 'http://localhost:8000';
 
     useEffect(() => {
         if (activeTab === 'ocorrencias') {

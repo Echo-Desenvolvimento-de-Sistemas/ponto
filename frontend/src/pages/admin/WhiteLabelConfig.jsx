@@ -118,7 +118,7 @@ const WhiteLabelConfig = () => {
                 const saved = response.data.data;
                 const base = import.meta.env.VITE_API_URL
                     ? import.meta.env.VITE_API_URL.replace('/api', '')
-                    : window.location.origin;
+                    : 'http://localhost:8000';
                 setConfigs(prev => ({
                     ...prev,
                     primaryColor: saved.primaryColor || prev.primaryColor,
